@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+* {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+}
+body {
+  /* background-color: #5b5b5b; */
+  font-family: var(--main-font);
+}
+:root {
+  --main-font: "Poppins", sans-serif;
+  --theme-orange: "#eaa636";
+}
+.cover {
+  background-color: #0000008e;
+  height: 100%;
+  width: 100%;
+  /* padding: 2rem; */
+}
+.hero_cover {
+  background-color: #00000047;
+}
