@@ -7,7 +7,7 @@ const SecHeading = ({ subtitle, maintitle, substyle, mainstyle, divstyle }) => {
         {subtitle}
       </p>
       <p
-        className={`${mainstyle} text-stone-100 text-[1.9rem] font-semibold max-w-[400px] `}
+        className={`mainheading text-stone-100 text-[1.9rem] font-semibold max-w-[400px] ${mainstyle}`}
       >
         {maintitle}
       </p>

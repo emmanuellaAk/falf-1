@@ -22,3 +22,16 @@ body {
 .hero_cover {
   background-color: #00000047;
 }
+.team .mainheading,
+.practice_areas .mainheading {
+  color: #1a1a1a;
+}
+.value_row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+/* .input_box {
+  width: 100%;
+  max-width: 100%;
+} */

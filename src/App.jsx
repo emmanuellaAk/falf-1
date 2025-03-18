@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import { useLayoutEffect } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const Wrapper = ({ children }) => {
   const location = useLocation();
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </>
   );
 }

@@ -3,6 +3,8 @@ import HeroCard from "../components/common/HeroCard";
 import SecHeading from "../components/common/SecHeading";
 import WelcomeSec from "../components/WelcomeSec";
 import Testimonials from "../components/Testimonials";
+import Team from "../components/Team";
+import { FaCheck } from "react-icons/fa";
 
 const filters = [
   {
@@ -43,6 +45,47 @@ const factStats = [
   {
     name: "staff members",
     value: "40+",
+  },
+];
+
+// const practiceValues = [
+//   "Corporate and M&A",
+//   "Construction and Real Estate",
+//   "Commercial Duspute Resolution",
+//   "Employment",
+//   "Banking and Finance",
+//   "Captial Market",
+//   "Environmental",
+//   "Intellectual Property Right",
+//   "Goverment",
+//   "Foundation/Non Profit Organization",
+//   "Bankcuptcy",
+//   "Criminal",
+// ];
+const values = [
+  {
+    row1: [
+      "Corporate and M&A",
+      "Construction and Real Estate",
+      "Commercial Duspute Resolution",
+      "Employment",
+    ],
+  },
+  {
+    row2: [
+      "Banking and Finance",
+      "Captial Market",
+      "Environmental",
+      "Intellectual Property Right",
+    ],
+  },
+  {
+    row3: [
+      "Goverment",
+      "Foundation/Non Profit Organization",
+      "Bankcuptcy",
+      "Criminal",
+    ],
   },
 ];
 
@@ -105,6 +148,55 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <section className="practice_areas bg-white p-8 py-26 flex flex-col gap-16">
+        <div className="practice_text flex flex-col items-center gap-6">
+          <SecHeading
+            subtitle={""}
+            maintitle={"practice areas"}
+            substyle={"text-[#]"}
+            mainstyle={"capitalize  "}
+            divstyle={"items-center"}
+          />
+          <p className="text-center max-w-[600px]">
+            We're dedicated to offering comprehensive, expert legal services
+            tailored to meet your specific needs. Our team of seasoned attorneys
+            brings decades of combined experience across a wide array of
+            practice areas.
+          </p>
+        </div>
+        <div className="practice_values grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-6 ">
+          <div className="value_row">
+            {values[0].row1.map((row1El) => (
+              <p className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 ">
+                <span className="bg-[#1a1a1a] text-[#eaa636] p-[.4rem] text-[.9rem] rounded-sm">
+                  <FaCheck />
+                </span>
+                {row1El}
+              </p>
+            ))}
+          </div>
+          <div className="value_row">
+            {values[1].row2.map((row2El) => (
+              <p className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 ">
+                <span className="bg-[#1a1a1a] text-[#eaa636] p-[.4rem] text-[.9rem] rounded-sm">
+                  <FaCheck />
+                </span>
+                {row2El}
+              </p>
+            ))}
+          </div>
+          <div className="value_row">
+            {values[2].row3.map((row3El) => (
+              <p className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 ">
+                <span className="bg-[#1a1a1a] text-[#eaa636] p-[.4rem] text-[.9rem] rounded-sm">
+                  <FaCheck />
+                </span>
+                {row3El}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="we_did bg-[url('https://res.cloudinary.com/dv9aqxptd/image/upload/v1742212253/falf/2_1_rffhay.jpg')] bg-center bg-cover">
         <div className="cover p-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-12 min-h-[70vh]">
           <div className="we_did_text flex flex-col gap-3 md:w-[30%]">
@@ -133,6 +225,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Team />
       <Testimonials />
     </section>
   );
