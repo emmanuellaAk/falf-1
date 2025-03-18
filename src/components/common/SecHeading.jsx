@@ -11,7 +11,7 @@ const SecHeading = ({ subtitle, maintitle, substyle, mainstyle, divstyle }) => {
       >
         {maintitle}
       </p>
-      <hr className="bg-[#eaa636] border-none h-[1.4px] max-w-[100px] rounded-[4rem] mt-2" />
+      <hr className="bg-[#eaa636] border-none h-[1.4px] max-w-[100px] min-w-[100px] rounded-[4rem] mt-2" />
     </div>
   );
 };

@@ -1,7 +1,53 @@
+import { useState } from "react";
 import HeroCard from "../components/common/HeroCard";
+import SecHeading from "../components/common/SecHeading";
 import WelcomeSec from "../components/WelcomeSec";
+import Testimonials from "../components/Testimonials";
+
+const filters = [
+  {
+    name: "our attorneys",
+    text: "Our attorneys are the cornerstone of our commitment to providing exceptional legal services. Each member of our team brings a wealth of experience, specialized knowledge, and a deep dedication to achieving the best outcomes for our clients. We pride ourselves on our collaborative approach, ensuring that every case benefits from the collective expertise of our diverse legal team.",
+  },
+  {
+    name: "our expertise",
+    text: "We brings extensive experience and specialized knowledge to a wide range of legal practice areas. We are dedicated to providing top-tier legal services, tailored to meet the unique needs of each client. Whether you're facing a personal legal challenge or require sophisticated business counsel, our attorneys are here to guide you with unparalleled expertise and unwavering commitment.",
+  },
+  {
+    name: "our firm",
+    text: "We are dedicated to providing exceptional legal services tailored to meet the unique needs of our clients. Our firm is built on a foundation of integrity, professionalism, and a commitment to excellence. Whether you're facing a personal legal challenge or require sophisticated business counsel, our team of experienced attorneys is here to guide you through every step of the legal process.",
+  },
+];
+
+const factStats = [
+  {
+    name: "Homes Protected",
+    value: "450+",
+  },
+  {
+    name: "people saved",
+    value: "4k+",
+  },
+  {
+    name: "money saved",
+    value: "$320k+",
+  },
+  {
+    name: "contracts signed",
+    value: "200+",
+  },
+  {
+    name: "countries",
+    value: "100+",
+  },
+  {
+    name: "staff members",
+    value: "40+",
+  },
+];
 
 const Home = () => {
+  const [currFilter, setCurrFilter] = useState("our attorneys");
   return (
     <section className="homepage">
       <HeroCard />
@@ -14,6 +60,80 @@ const Home = () => {
         </button>
       </section>
       <WelcomeSec />
+      <section className="experiences p-8 py-16 flex flex-col gap-5 ">
+        <SecHeading
+          subtitle={"experiences"}
+          maintitle={"Let Our Experience be Your Guide"}
+          substyle={"text-[#]"}
+          mainstyle={""}
+          divstyle={"md:hidden"}
+        />
+        <div className="experiences_content md:flex md:items-center gap-8 justify-between">
+          <div className="imgBox bg-[#fff] md:w-[40%] hidden md:block">
+            <img
+              src="https://res.cloudinary.com/dv9aqxptd/image/upload/v1742247041/falf/9_mxjnwa.jpg"
+              alt="attorney"
+              className="w-full h-full object-cover object-center md:w-full"
+            />
+          </div>
+          <div className="all_experiences flex flex-col gap-3 mt-4 md:w-[50%]">
+            <SecHeading
+              subtitle={"experiences"}
+              maintitle={"Let Our Experience be Your Guide"}
+              substyle={"text-[#]"}
+              mainstyle={""}
+              divstyle={"hidden md:block mb-8"}
+            />
+            <div className="filterBtns   gap-x-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {filters.map((filter) => (
+                <button
+                  key={filter.name}
+                  onClick={() => setCurrFilter(filter.name)}
+                  className={`text-white  py-2 px-4 rounded-sm font-semibold capitalize border-1 border-[#eaa636] cursor-pointer hover:bg-[#eaa636] ease-in-out duration-500  max-w-[300px] ${
+                    currFilter === filter.name ? "bg-[#eaa636]" : ""
+                  }`}
+                >
+                  {filter.name}
+                </button>
+              ))}
+            </div>
+            {filters.map((info) => (
+              <p className="text-stone-400 font-light leading-8 max-w-[600px]">
+                {currFilter === info.name ? info.text : ""}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="we_did bg-[url('https://res.cloudinary.com/dv9aqxptd/image/upload/v1742212253/falf/2_1_rffhay.jpg')] bg-center bg-cover">
+        <div className="cover p-8 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-12 min-h-[70vh]">
+          <div className="we_did_text flex flex-col gap-3 md:w-[30%]">
+            <SecHeading
+              subtitle={"fun facts"}
+              maintitle={"What we did?"}
+              substyle={"text-[#]"}
+              mainstyle={""}
+              divstyle={""}
+            />
+            <p className="text-stone-200 max-w-[600px]">
+              Trust in our expertise and let us champion your legal rights with
+              skill and compassion.
+            </p>
+          </div>
+          <div className="we_did_stats grid grid-cols-1 gap-y-5 md:grid-cols-2 lg:grid-cols-3 md:w-[60%]">
+            {factStats.map((stat) => (
+              <div
+                key={stat.name}
+                className=" text-white flex flex-col items-start  max-w-[200px]"
+              >
+                <p className="font-semibold text-[1.7rem]">{stat.value}</p>
+                <p className="text-[#eaa636] capitalize">{stat.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Testimonials />
     </section>
   );
 };

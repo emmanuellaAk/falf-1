@@ -54,7 +54,7 @@ const WelcomeSec = () => {
       <div className="all_laws grid grid-cols-1 gap-y-5 gap-x-5 md:grid-cols-2 lg:grid-cols-3">
         {laws.map((law) => (
           <div
-            className={`law ${law.bg} bg-cover bg-center min-h-[50vh] max-h-[60vh] relative`}
+            className={`law ${law.bg} bg-cover bg-center min-h-[50vh] max-h-[60vh] relative overflow-hidden`}
             onMouseOver={() => setWelcomeHover(law.name)}
             onMouseOut={() => setWelcomeHover("")}
             key={law.name}
