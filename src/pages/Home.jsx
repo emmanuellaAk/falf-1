@@ -6,6 +6,8 @@ import Testimonials from "../components/Testimonials";
 import Team from "../components/Team";
 import { FaCheck } from "react-icons/fa";
 import Experience from "../components/common/Experience";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 // const filters = [
 //   {
@@ -25,27 +27,33 @@ import Experience from "../components/common/Experience";
 const factStats = [
   {
     name: "Homes Protected",
-    value: "450+",
+    value: "450",
+    suffix: "+",
   },
   {
     name: "people saved",
-    value: "4k+",
+    value: "4",
+    suffix: "k+",
   },
   {
     name: "money saved",
-    value: "$320k+",
+    value: "320",
+    suffix: "k+",
   },
   {
     name: "contracts signed",
-    value: "200+",
+    value: "200",
+    suffix: "+",
   },
   {
     name: "countries",
-    value: "100+",
+    value: "100",
+    suffix: "+",
   },
   {
     name: "staff members",
-    value: "40+",
+    value: "40",
+    suffix: "+",
   },
 ];
 
@@ -79,7 +87,7 @@ const values = [
 const Home = () => {
   // const [currFilter, setCurrFilter] = useState("our attorneys");
   return (
-    <section className="homepage">
+    <section className="homepage overflow-x-hidden">
       <HeroCard />
       <section className="offer_banner p-8 min-h-[20vh] flex flex-col items-center justify-center bg-[#eaa636] text-stone-100 font-semibold px-8 text-center gap-4 md:flex-row md:text-left md:justify-between md:px-12">
         <p className="text-[1.4rem] max-w-[600px] md:max-w-[700px]">
@@ -145,42 +153,90 @@ const Home = () => {
             mainstyle={"capitalize  "}
             divstyle={"items-center"}
           />
-          <p className="text-center max-w-[600px]">
+          <motion.p
+            initial={{ x: -70, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              x: { type: "spring", duration: 1, stiffness: 40 },
+              opacity: { duration: 2 },
+              ease: "easeInOut",
+              // duration: 4,
+            }}
+            viewport={{ once: true }}
+            className="text-center max-w-[600px]"
+          >
             We're dedicated to offering comprehensive, expert legal services
             tailored to meet your specific needs. Our team of seasoned attorneys
             brings decades of combined experience across a wide array of
             practice areas.
-          </p>
+          </motion.p>
         </div>
         <div className="practice_values grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-6 ">
           <div className="value_row">
             {values[0].row1.map((row1El) => (
-              <p className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 ">
+              <motion.p
+                initial={{ y: 70, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  y: { type: "spring", duration: 1, stiffness: 40 },
+                  opacity: { duration: 2 },
+                  ease: "easeInOut",
+                  // duration: 4,
+                }}
+                viewport={{ once: true }}
+                className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 "
+              >
                 <span className="bg-[#1a1a1a] text-[#eaa636] p-[.4rem] text-[.9rem] rounded-sm">
                   <FaCheck />
                 </span>
                 {row1El}
-              </p>
+              </motion.p>
             ))}
           </div>
           <div className="value_row">
             {values[1].row2.map((row2El) => (
-              <p className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 ">
+              <motion.p
+                initial={{ y: 70, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  y: { type: "spring", duration: 1, stiffness: 40 },
+                  opacity: { duration: 2 },
+                  ease: "easeInOut",
+                  // duration: 4,
+                }}
+                viewport={{ once: true }}
+                className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 "
+              >
                 <span className="bg-[#1a1a1a] text-[#eaa636] p-[.4rem] text-[.9rem] rounded-sm">
                   <FaCheck />
                 </span>
                 {row2El}
-              </p>
+              </motion.p>
             ))}
           </div>
           <div className="value_row">
             {values[2].row3.map((row3El) => (
-              <p className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 ">
+              <motion.p
+                initial={{ y: 70, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  y: { type: "spring", duration: 1, stiffness: 40 },
+                  opacity: { duration: 2 },
+                  ease: "easeInOut",
+                  // duration: 4,
+                }}
+                viewport={{ once: true }}
+                className="text-[.88rem] tracking-wide   text-stone-600 flex items-center gap-1 "
+              >
                 <span className="bg-[#1a1a1a] text-[#eaa636] p-[.4rem] text-[.9rem] rounded-sm">
                   <FaCheck />
                 </span>
                 {row3El}
-              </p>
+              </motion.p>
             ))}
           </div>
         </div>
@@ -202,13 +258,34 @@ const Home = () => {
           </div>
           <div className="we_did_stats grid grid-cols-1 gap-y-5 md:grid-cols-2 lg:grid-cols-3 md:w-[60%]">
             {factStats.map((stat) => (
-              <div
+              <motion.div
+                initial={{ y: 70, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  y: { type: "spring", duration: 1, stiffness: 40 },
+                  opacity: { duration: 2 },
+                  ease: "easeInOut",
+                  // duration: 4,
+                }}
+                viewport={{ once: true }}
                 key={stat.name}
                 className=" text-white flex flex-col items-start  max-w-[200px]"
               >
-                <p className="font-semibold text-[1.7rem]">{stat.value}</p>
+                <p className="font-semibold text-[1.7rem]">
+                  <CountUp
+                    start={0}
+                    startOnMount:false
+                    end={stat.value}
+                    duration={4}
+                    enableScrollSpy={true}
+                    scrollSpyOnce={true}
+                    scrollSpyDelay={1}
+                  />
+                  <span>{stat.suffix}</span>
+                </p>
                 <p className="text-[#eaa636] capitalize">{stat.name}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

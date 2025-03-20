@@ -3,7 +3,7 @@ import SecHeading from "./SecHeading";
 const PageHead = ({ bg, pageTitile }) => {
   return (
     <section className={`pagehead min-h-[60vh] ${bg} bg-center bg-cover`}>
-      <div className="cover min-h-[60vh] flex flex-col items-center justify-center gap-2">
+      <div className="cover min-h-[70vh] flex flex-col items-center justify-center gap-2">
         <SecHeading
           subtitle={""}
           maintitle={pageTitile}

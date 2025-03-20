@@ -6,6 +6,8 @@ import Team from "../components/Team";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { GiFist } from "react-icons/gi";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const aboutCards = [
   {
@@ -27,6 +29,7 @@ const aboutCards = [
 
 const About = () => {
   const [cardHover, setCardHover] = useState("");
+
   return (
     <section className="about">
       <PageHead
@@ -44,7 +47,19 @@ const About = () => {
             mainstyle={"capitalize"}
             divstyle={"gap-1"}
           />
-          <p className=" leading-9 font-light">
+          <motion.p
+            initial={{ y: 70, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.2,
+              y: { type: "spring", duration: 1, stiffness: 40 },
+              opacity: { duration: 2 },
+              ease: "easeInOut",
+              // duration: 4,
+            }}
+            viewport={{ once: true }}
+            className=" leading-9 font-light"
+          >
             Explore innovative strategies, expert guidance, and tailored
             solutions to propel your success forward. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -53,7 +68,7 @@ const About = () => {
             atque corrupti quos dolores et quas molestias excepturi sint
             occaecati cupiditate non provident, similique sunt in culpa qui
             officia deserunt mollitia animi, id est laborum et dolorum fuga.
-          </p>
+          </motion.p>
         </div>
         <div className="weare_illus  md:w-[50%]">
           <div className="imgBox max-w-[500px] relative">
@@ -63,7 +78,15 @@ const About = () => {
               className="w-full h-full rounded-md"
             />
             <div className="case_numbers bg-[#eaa636] w-[40%] absolute top-0 left-[-30px] my-auto bottom-0 h-[40%] flex flex-col items-center justify-center text-white rounded-md">
-              <p className="text-[2.6rem] font-bold">2500</p>
+              <p className="text-[2.6rem] font-bold">
+                <CountUp
+                  start={0}
+                  end={2500}
+                  enableScrollSpy={true}
+                  scrollSpyOnce={true}
+                  scrollSpyDelay={2}
+                />
+              </p>
               <p className="capitalize text-[.9rem]">solved cases</p>
             </div>
           </div>
@@ -72,8 +95,16 @@ const About = () => {
       <Experience />
       <Team />
       <section className="about_exp p-8 py-24 grid grid-cols-1 gap-10 lg:grid-cols-3 max-w-[600px] mx-auto lg:max-w-full lg:w-[85%] ">
-        <div className="border border-[#373737] max-w-[500px] mx-auto flex flex-col items-center justify-center min-h-[34vh] px-24 py-12 max-w-full">
-          <p className="text-white font-bold text-[10rem]">20</p>
+        <div className="border border-[#373737] max-w-[500px] mx-auto flex flex-col items-center text-center justify-center min-h-[34vh] px-24 py-12 max-w-full">
+          <p className="text-white font-bold text-[10rem]">
+            <CountUp
+              start={0}
+              end={20}
+              enableScrollSpy={true}
+              scrollSpyOnce={true}
+              duration={4}
+            />
+          </p>
           <p className="text-[#eaa636] uppercase font-semibold tracking-[3px]">
             years of experience
           </p>
@@ -85,13 +116,25 @@ const About = () => {
           mainstyle={"capitalize max-w-full min-w-full"}
           divstyle={"gap-1  justify-center"}
         />
-        <p className="text-stone-200 tracking-wide font-light leading-8  flex items-center">
+        <motion.p
+          initial={{ x: -70, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            x: { type: "spring", duration: 1, stiffness: 40 },
+            opacity: { duration: 2 },
+            ease: "easeInOut",
+            // duration: 4,
+          }}
+          viewport={{ once: true }}
+          className="text-stone-200 tracking-wide font-light leading-8  flex items-center"
+        >
           We take pride in the depth and breadth of experience that our team of
           lawyers brings to the table. With years of dedicated practice in
           various areas of law, our attorneys have honed their skills, developed
           specialized knowledge, and earned a reputation for excellence in their
           respective fields.
-        </p>
+        </motion.p>
       </section>
       <section className="aboutCards p-8 py-24 bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {aboutCards.map((card) => (

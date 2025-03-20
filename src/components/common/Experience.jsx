@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SecHeading from "./SecHeading";
+import { motion } from "framer-motion";
 
 const filters = [
   {
@@ -57,9 +58,21 @@ const Experience = () => {
             ))}
           </div>
           {filters.map((info) => (
-            <p className="text-stone-400 font-light leading-8 max-w-[600px]">
+            <motion.p
+              initial={{ x: -70, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                delay: 0.2,
+                x: { type: "spring", duration: 1, stiffness: 40 },
+                opacity: { duration: 2 },
+                ease: "easeInOut",
+                // duration: 4,
+              }}
+              viewport={{ once: true }}
+              className="text-stone-400 font-light leading-8 max-w-[600px]"
+            >
               {currFilter === info.name ? info.text : ""}
-            </p>
+            </motion.p>
           ))}
         </div>
       </div>

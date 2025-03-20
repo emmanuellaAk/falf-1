@@ -1,4 +1,5 @@
 import SecHeading from "./common/SecHeading";
+import { motion } from "framer-motion";
 
 const team = [
   {
@@ -23,7 +24,7 @@ const team = [
 
 const Team = () => {
   return (
-    <section className="p-8 py-16 flex flex-col gap-8 bg-white team">
+    <section className="overflow-x-hidden p-8 py-16 flex flex-col gap-8 bg-white team">
       <SecHeading
         subtitle={""}
         maintitle={"our lawyer team"}
@@ -45,8 +46,36 @@ const Team = () => {
               />
             </div>
             <div className="flex flex-col items-center">
-              <p className="font-semibold text-[1.2rem]">{member.name}</p>
-              <p className="text-stone-600 text-[.9rem]">{member.poistion}</p>
+              <motion.p
+                initial={{ x: -70, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", duration: 1, stiffness: 40 },
+                  opacity: { duration: 2 },
+                  ease: "easeInOut",
+                  // duration: 4,
+                }}
+                viewport={{ once: true }}
+                className="font-semibold text-[1.2rem]"
+              >
+                {member.name}
+              </motion.p>
+              <motion.p
+                initial={{ x: 70, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  delay: 0.2,
+                  x: { type: "spring", duration: 1, stiffness: 40 },
+                  opacity: { duration: 2 },
+                  ease: "easeInOut",
+                  // duration: 4,
+                }}
+                viewport={{ once: true }}
+                className="text-stone-600 text-[.9rem]"
+              >
+                {member.poistion}
+              </motion.p>
             </div>
           </div>
         ))}

@@ -4,6 +4,7 @@ import { RiTeamFill } from "react-icons/ri";
 import { Link } from "react-router";
 import { IoHomeSharp } from "react-icons/io5";
 import { GoLaw } from "react-icons/go";
+import { motion } from "framer-motion";
 
 const laws = [
   {
@@ -41,7 +42,19 @@ const WelcomeSec = () => {
           mainstyle={""}
           divstyle={"md:w-[30%]"}
         />
-        <p className="text-stone-200 text-[.9rem] leading-8 md:leading-7 font-[300] md:w-[70%]">
+        <motion.p
+          initial={{ y: 70, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", duration: 1, stiffness: 40 },
+            opacity: { duration: 2 },
+            ease: "easeInOut",
+            // duration: 4,
+          }}
+          viewport={{ once: true }}
+          className="text-stone-200 text-[.9rem] leading-8 md:leading-7 font-[300] md:w-[70%]"
+        >
           We understand that legal issues can be some of the most challenging
           and stressful experiences in life. Whether you are dealing with a
           complex family matter, facing criminal charges, or navigating the
@@ -49,7 +62,7 @@ const WelcomeSec = () => {
           comprehensive, compassionate, and expert legal guidance. Our seasoned
           attorneys are committed to the highest standard of legal
           representation tailored to meet your unique needs.
-        </p>
+        </motion.p>
       </div>
       <div className="all_laws grid grid-cols-1 gap-y-5 gap-x-5 md:grid-cols-2 lg:grid-cols-3">
         {laws.map((law) => (
