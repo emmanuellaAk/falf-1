@@ -72,7 +72,7 @@ const About = () => {
       <Experience />
       <Team />
       <section className="about_exp p-8 py-24 grid grid-cols-1 gap-10 lg:grid-cols-3 max-w-[600px] mx-auto lg:max-w-full lg:w-[85%] ">
-        <div className="border border-[#373737] max-w-[500px] mx-auto flex flex-col items-center justify-center min-h-[34vh] px-24 py-12">
+        <div className="border border-[#373737] max-w-[500px] mx-auto flex flex-col items-center justify-center min-h-[34vh] px-24 py-12 max-w-full">
           <p className="text-white font-bold text-[10rem]">20</p>
           <p className="text-[#eaa636] uppercase font-semibold tracking-[3px]">
             years of experience
