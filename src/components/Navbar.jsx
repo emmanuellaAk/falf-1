@@ -13,13 +13,10 @@ const navLinks = [
     name: "About",
   },
   {
-    ref: "/",
+    ref: "/contact",
     name: "Contact",
   },
-  {
-    ref: "/",
-    name: "Testmonials",
-  },
+
 ];
 
 const Navbar = () => {

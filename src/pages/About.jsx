@@ -111,7 +111,7 @@ const About = () => {
         </div>
         <SecHeading
           subtitle={"welcome"}
-          maintitle={"Justica is Your Best Partner for Legal Solutions"}
+          maintitle={"First Aurora Law Firm is Your Best Partner for Legal Solutions"}
           substyle={""}
           mainstyle={"capitalize max-w-full min-w-full"}
           divstyle={"gap-1  justify-center"}
