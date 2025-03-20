@@ -9,7 +9,7 @@ const navLinks = [
     name: "Home",
   },
   {
-    ref: "/",
+    ref: "/about-us",
     name: "About",
   },
   {

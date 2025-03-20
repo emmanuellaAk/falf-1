@@ -1,13 +1,13 @@
 const SecHeading = ({ subtitle, maintitle, substyle, mainstyle, divstyle }) => {
   return (
-    <div className={`${divstyle} flex flex-col gap-2`}>
+    <div className={`${divstyle} flex flex-col gap-0`}>
       <p
         className={`${substyle} text-[#eaa636] uppercase tracking-[1.6px] font-semibold text-[.9rem]`}
       >
         {subtitle}
       </p>
       <p
-        className={`mainheading text-stone-100 text-[1.9rem] font-semibold max-w-[400px] ${mainstyle}`}
+        className={`mainheading text-stone-100 text-[1.9rem] font-semibold  ${mainstyle}`}
       >
         {maintitle}
       </p>

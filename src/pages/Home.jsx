@@ -1,25 +1,26 @@
-import { useState } from "react";
+// import { useState } from "react";
 import HeroCard from "../components/common/HeroCard";
 import SecHeading from "../components/common/SecHeading";
 import WelcomeSec from "../components/WelcomeSec";
 import Testimonials from "../components/Testimonials";
 import Team from "../components/Team";
 import { FaCheck } from "react-icons/fa";
+import Experience from "../components/common/Experience";
 
-const filters = [
-  {
-    name: "our attorneys",
-    text: "Our attorneys are the cornerstone of our commitment to providing exceptional legal services. Each member of our team brings a wealth of experience, specialized knowledge, and a deep dedication to achieving the best outcomes for our clients. We pride ourselves on our collaborative approach, ensuring that every case benefits from the collective expertise of our diverse legal team.",
-  },
-  {
-    name: "our expertise",
-    text: "We brings extensive experience and specialized knowledge to a wide range of legal practice areas. We are dedicated to providing top-tier legal services, tailored to meet the unique needs of each client. Whether you're facing a personal legal challenge or require sophisticated business counsel, our attorneys are here to guide you with unparalleled expertise and unwavering commitment.",
-  },
-  {
-    name: "our firm",
-    text: "We are dedicated to providing exceptional legal services tailored to meet the unique needs of our clients. Our firm is built on a foundation of integrity, professionalism, and a commitment to excellence. Whether you're facing a personal legal challenge or require sophisticated business counsel, our team of experienced attorneys is here to guide you through every step of the legal process.",
-  },
-];
+// const filters = [
+//   {
+//     name: "our attorneys",
+//     text: "Our attorneys are the cornerstone of our commitment to providing exceptional legal services. Each member of our team brings a wealth of experience, specialized knowledge, and a deep dedication to achieving the best outcomes for our clients. We pride ourselves on our collaborative approach, ensuring that every case benefits from the collective expertise of our diverse legal team.",
+//   },
+//   {
+//     name: "our expertise",
+//     text: "We brings extensive experience and specialized knowledge to a wide range of legal practice areas. We are dedicated to providing top-tier legal services, tailored to meet the unique needs of each client. Whether you're facing a personal legal challenge or require sophisticated business counsel, our attorneys are here to guide you with unparalleled expertise and unwavering commitment.",
+//   },
+//   {
+//     name: "our firm",
+//     text: "We are dedicated to providing exceptional legal services tailored to meet the unique needs of our clients. Our firm is built on a foundation of integrity, professionalism, and a commitment to excellence. Whether you're facing a personal legal challenge or require sophisticated business counsel, our team of experienced attorneys is here to guide you through every step of the legal process.",
+//   },
+// ];
 
 const factStats = [
   {
@@ -48,20 +49,6 @@ const factStats = [
   },
 ];
 
-// const practiceValues = [
-//   "Corporate and M&A",
-//   "Construction and Real Estate",
-//   "Commercial Duspute Resolution",
-//   "Employment",
-//   "Banking and Finance",
-//   "Captial Market",
-//   "Environmental",
-//   "Intellectual Property Right",
-//   "Goverment",
-//   "Foundation/Non Profit Organization",
-//   "Bankcuptcy",
-//   "Criminal",
-// ];
 const values = [
   {
     row1: [
@@ -90,7 +77,7 @@ const values = [
 ];
 
 const Home = () => {
-  const [currFilter, setCurrFilter] = useState("our attorneys");
+  // const [currFilter, setCurrFilter] = useState("our attorneys");
   return (
     <section className="homepage">
       <HeroCard />
@@ -103,7 +90,7 @@ const Home = () => {
         </button>
       </section>
       <WelcomeSec />
-      <section className="experiences p-8 py-16 flex flex-col gap-5 ">
+      {/* <section className="experiences p-8 py-16 flex flex-col gap-5 ">
         <SecHeading
           subtitle={"experiences"}
           maintitle={"Let Our Experience be Your Guide"}
@@ -147,7 +134,8 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+      <Experience />
       <section className="practice_areas bg-white p-8 py-26 flex flex-col gap-16">
         <div className="practice_text flex flex-col items-center gap-6">
           <SecHeading

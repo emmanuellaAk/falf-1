@@ -23,13 +23,17 @@ body {
   background-color: #00000047;
 }
 .team .mainheading,
-.practice_areas .mainheading {
+.practice_areas .mainheading,
+.we_are .mainheading {
   color: #1a1a1a;
 }
 .value_row {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+}
+.mainheading {
+  max-width: 400px;
 }
 /* .input_box {
   width: 100%;

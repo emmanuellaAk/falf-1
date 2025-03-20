@@ -130,7 +130,7 @@ const Footer = () => {
           <h2 className="text-[#eaa636] font-semibold text-[1.3rem]">
             Newsletter
           </h2>
-          <p className="text-white text-[.9rem]">
+          <p className="text-white text-[.9rem] max-w-[500px]">
             Signup for our newsletter to get the latest news, updates and
             special offers in your inbox.
           </p>
@@ -154,7 +154,10 @@ const Footer = () => {
       </div>
       <hr className="bg-stone-700 h-[1px] w-full border-0" />
       <p className="text-stone-300 text-center mt-6">
-        &copy; Copyright {year} - Confetto
+        &copy; Copyright {year} -{" "}
+        <a href="#" className="underline underline-offset-2">
+          Confetto
+        </a>
       </p>
     </footer>
   );
