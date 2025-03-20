@@ -39,3 +39,6 @@ body {
   width: 100%;
   max-width: 100%;
 } */
+.menuWindow a:first-child {
+  border-top: 1px solid #bababa;
+}
